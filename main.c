@@ -1,20 +1,33 @@
 #include <stdlib.h>
 #include <unistd.h>
+#include <stdarg.h>
 #include "my_printf.h"
 
-void backslash()
+void print_string(va_list random)
 {
-  my_putstr("\n");
+  my_putstr("oui");
 }
 
-int my_printf(const char* str, ...)
+t_argument argu[4] =
+  {
+    {'s', print_string},
+    {'c', print_char},
+    {'i', print_int},
+    {'d', print_int},
+    {0,0}
+  };
+
+int my_printf	(const char* str, ...)
 {
-  int i;
+  int		i;
   i = 0;
   while (str[i + 1] != '\0')
     {
-      if(str[i] == '\\' && str[i + 1] == 'n')
-	backslash();
+      if (str[i] == '%')
+	{
+	  argu(str[i + 1]);
+	  my_putstr(str[i + 1]);
+	}
       else
 	my_putchar(str[i]);    
       i++;
