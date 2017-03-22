@@ -25,9 +25,9 @@ int	siz(int n)
     {
       i = (i / 10);
       size++;
-  }
+    }
   return (size) ;
-  }
+}
 
 int	powo(int p)
 {
@@ -36,46 +36,42 @@ int	powo(int p)
   
   z = 0;
   y = 1;
-   while (z < p)
-  {
-    y = y * 10;
-    z++;
-  }
+  while (z < p)
+    {
+      y = y * 10;
+      z++;
+    }
   return(y) ;
 }
 
 
 void	my_put_nbr(int n)
-  {
+{
   int	j;        //nombre isole//
   int	z;        //decrementation de la taille//
   int	s;        // reste du calcul
   s = n;
   
-   if (s < 0 && s != -2147483648)
+  if (s < 0 && s != -2147483648)
     {
       my_putchar('-');
       s = s * (-1);
     }
    
-   if (n == 0)
-     {
-       my_putchar('0');
-     }
+  if (n == 0)
+      my_putchar('0');
    
-     if (s == -2147483648)
-    {
+  /*  if (s == -2147483648)
       my_putstr("-2147483648");
-      }
-  
+  */ 
   z = siz(s);
   j = 1;
 
   while (z > 0)
-      {
-	j = s / powo(z - 1);
-        s = s - j * powo(z - 1);
-        z--;
-	my_putchar(j + 48);
-      }
-  }
+    {
+      j = s / powo(z - 1);
+      s = s - j * powo(z - 1);
+      z--;
+      my_putchar(j + 48);
+    }
+}
