@@ -61,9 +61,9 @@ void	my_put_nbr(int n)
   if (n == 0)
       my_putchar('0');
    
-  /*  if (s == -2147483648)
-      my_putstr("-2147483648");
-  */ 
+  /*    if (s == -2147483648)
+	my_putstr("-2147483648");*/
+   
   z = siz(s);
   j = 1;
 
