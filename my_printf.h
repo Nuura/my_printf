@@ -13,5 +13,5 @@ void		print_char(va_list random);
 void		print_int(va_list random);
 void		print_octal(va_list random);
 void		print_pourcent(va_list random);
-int		my_strlen(char *str);
-char		*my_strdup(char *str);
+/*int		my_strlen(char *str);*/
+/*char		*my_strdup(char *str);*/
