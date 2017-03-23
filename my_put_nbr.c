@@ -47,9 +47,9 @@ int	powo(int p)
 
 void	my_put_nbr(int n)
 {
-  int	j;        //nombre isole//
-  int	z;        //decrementation de la taille//
-  int	s;        // reste du calcul
+  int	j;        /*nombre isole*/
+  int	z;        /*decrementation de la taille*/
+  int	s;        /* reste du calcul*/
   s = n;
   
   if (s < 0 && s != -2147483648)

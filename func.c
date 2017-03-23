@@ -1,3 +1,13 @@
+/*
+** func.c for  in /home/nuura/Desktop/printf/my_printf/trunk
+** 
+** Made by SANCHEZ Pierre
+** Login   <sanche_p@etna-alternance.net>
+** 
+** Started on  Thu Mar 23 08:48:45 2017 SANCHEZ Pierre
+** Last update Thu Mar 23 08:48:47 2017 SANCHEZ Pierre
+*/
+
 #include <stdlib.h>
 #include <unistd.h>
 #include <stdarg.h>

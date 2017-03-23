@@ -1,36 +1,38 @@
 CC =			gcc
 
-NAME =			my_printf
+NAME =			libmy_printf_`uname -m`-`uname -s`
 
-SRC =			main.c 				\
-			func.c				\
-			libmy_03/libmy.a
+SRC =			my_printf.c 				\
+			func.c					\
+			my_putstr.c				\
+			my_putchar.c				\
+			my_put_nbr.c
 
-OBJ =			$(SRC:%.c=%.o)
+TRASH =			libmy_printf_x86_64-Linux.a		\
+			libmy_printf_x86_64-Linux.so
 
-RM =			rm -f
+RM =			rm -rf
 
 CFLAGS =		-Wall -Werror -Wpedantic
 
 LIB =			-L./libmy
 
-all:			$(NAME)
+all:			my_printf_static my_printf_dynamic
 
-$(NAME):		compil $(OBJ)
-				$(CC) $(CFLAGS) $(SRC) $(LIB) -o $(NAME)
+my_printf_static:
+			gcc -c $(SRC) $(CFLAGS)
+			ar -rc $(NAME).a *.o
+			ranlib $(NAME).a
 
-compil:
-			cd libmy_03; make fclean; make; cd -;
+my_printf_dynamic:
+			$(CC) -fPIC -shared $(SRC) $(CFLAGS) -o $(NAME).so
 
 clean:
-				$(RM) $(OBJ)
+			$(RM) *.o
 
 fclean:			clean
-				$(RM) $(NAME)
+			$(RM) $(TRASH)
 
-re:				fclean all
+re:			fclean all
 
-run:
-			./my_printf
-
-.PHONY:			all clean fclean re
+.PHONY:			all clean fclean
