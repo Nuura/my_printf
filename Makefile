@@ -28,7 +28,7 @@ my_printf_dynamic:
 			$(CC) -fPIC -shared $(SRC) $(CFLAGS) -o $(NAME).so
 
 clean:
-			$(RM) *.o
+			$(RM) *.o *~
 
 fclean:			clean
 			$(RM) $(TRASH)

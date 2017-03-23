@@ -5,7 +5,7 @@
 ** Login   <sanche_p@etna-alternance.net>
 ** 
 ** Started on  Thu Mar 23 08:49:02 2017 SANCHEZ Pierre
-** Last update Thu Mar 23 08:49:04 2017 SANCHEZ Pierre
+** Last update Thu Mar 23 11:58:38 2017 SANCHEZ Pierre
 */
 
 #include <stdlib.h>
@@ -28,7 +28,7 @@ void print_int(va_list random)
   my_put_nbr(va_arg(random, int));
 }
 
-t_argument argu[7] =
+t_argument argu[9] =
   {
     {'s', print_string},
     {'c', print_char},
@@ -36,6 +36,8 @@ t_argument argu[7] =
     {'d', print_int},
     {'o', print_octal},
     {'%', print_pourcent},
+    {'x', print_small_hexa},
+    {'X', print_big_hexa},
     {0,0}
   };
 
